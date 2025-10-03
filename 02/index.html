@@ -1,14 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    <H1>ATIVIDADE 02</H1>
-</body>
+<html lang="pt-br">
+
+  <head>
+	<title>Javascript</title>
+	<script>
+		function raiz(arg){
+			var raiz = Math.sqrt(arg);
+			alert('A raiz quadrada de ' +arg + ' é '+ raiz );
+		}
+		
+		function escreveDiv(texto){
+			document.getElementById("minhaDiv").innerHTML = texto;
+		}	
+
+		function escreveDiv2(){
+			texto = prompt('Digite um texto qualquer');
+			document.getElementById("minhaDiv2").innerHTML = texto;
+		}	
+
+
+		function escreverNumeros() {
+			var n = parseInt(prompt("Digite o valor de N:"));
+
+			if (isNaN(n) || n <= 0) {
+				alert("Por favor, insira um número válido maior que zero.");
+				return;
+			}
+
+			var div = document.getElementById("numeros");
+
+			div.innerHTML = "";
+
+			for (var i = 1; i <= n; i++) {
+				div.innerHTML += i + "<br>";
+			}
+		}
+
+		
+
+	</script>	
+  </head>
+
+  <body>
+   
+   <h1>Raiz Quadrada</h1> 
+   
+   <button onclick="raiz(25)">Raiz de 25</button> <br><br>
+   <button onclick="raiz(36)">Raiz de 36</button> <br><br>
+   <button onclick="raiz(49)">Raiz de 49</button> <br><br>
+<!--
+   <button onclick="escreve('<h1>PROGRAMAÇÃO WEB</h1>')">Escreve</button> <br><br> -->
+
+<hr>
+
+   <h1>Escrevendo na Div</h1> 
+
+   <button onclick="escreveDiv('<h1> Programação Web</h1>')">Escrever</button> <br><br>
+
+   <div id="minhaDiv"></div>
+
+<hr>
+   <h1>Escrevendo na Texto Dinâmico</h1> 
+   <button onclick="escreveDiv2()">Escrever</button> <br><br>
+   <div id="minhaDiv2"></div>
+
+
+<hr>
+
+   <h1>Desafio</h1> 
+
+   <button onclick="escreverNumeros()">Escreve Números</button> <br><br>
+
+
+   <div id="numeros"></div>
+   
+   
+
+  </body>
 </html>
